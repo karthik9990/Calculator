@@ -1,0 +1,235 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .calculator {
+            max-width: 400px;
+            margin: 50px auto;
+        }
+        .output {
+            height: 75px;
+            font-size: 36px;
+            text-align: right;
+            padding-right: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .btn {
+            flex: 1;
+            height: 75px;
+            font-size: 28px;
+            margin: 5px;
+            border-radius: 10px;
+        }
+        .row {
+            margin: 0;
+        }
+        .col {
+            display: flex;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="output">
+                <p id="result">0</p>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('sin(')">sin</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('cos(')">cos</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('tan(')">tan</button></div>
+                <div class="col"><button class="btn btn-warning" onclick="appendToResult('Math.sqrt(')">√</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('Math.log10(')">log</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('Math.log(')">ln</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('Math.pow(')">x²</button></div>
+                <div class="col"><button class="btn btn-warning" onclick="appendToResult('**')">^</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('1')">1</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('2')">2</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('3')">3</button></div>
+                <div class="col"><button class="btn btn-warning" onclick="appendToResult('+')">+</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('0')">0</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('.')">.</button></div>
+                <div class="col"><button class="btn btn-primary" onclick="calculateResult()">=</button></div>
+            </div>
+            &lt;!&ndash; Back Button &ndash;&gt;
+            <div class="row">
+                <div class="col text-center">
+                    <a href="{% url 'calculator' %}" class="btn btn-secondary">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function appendToResult(value) {
+            const resultElement = document.getElementById('result');
+            if (resultElement.innerHTML === '0') {
+                resultElement.innerHTML = ''; // Clear the initial 0
+            }
+            resultElement.innerHTML += value;
+        }
+
+        function calculateResult() {
+            const expression = document.getElementById('result').innerHTML;
+            try {
+                const result = eval(expression);  // Use eval cautiously
+                document.getElementById('result').innerHTML = result;
+            } catch (error) {
+                document.getElementById('result').innerHTML = 'Error';
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .calculator {
+            max-width: 400px;
+            margin: 50px auto;
+        }
+        .output {
+            height: 75px;
+            font-size: 36px;
+            text-align: right;
+            padding-right: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .btn {
+            flex: 1;
+            height: 60px; /* Adjusted height */
+            font-size: 20px; /* Adjusted font size */
+            margin: 2px; /* Reduced margin */
+            border-radius: 10px;
+        }
+        .row {
+            margin: 0;
+        }
+        .col {
+            display: flex;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="output">
+                <p id="result">0</p>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('sin(')">sin</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('cos(')">cos</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('tan(')">tan</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('DEG')">DEG</button></div>
+                <div class="col"><button class="btn btn-danger" onclick="appendToResult('CLR')">CLR</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('x')">x</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('y')">y</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('(')">(</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult(')')">)</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('%')">%</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('log(')">log</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('7')">7</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('8')">8</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('9')">9</button></div>
+                <div class="col"><button class="btn btn-warning" onclick="appendToResult('/')">÷</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('Math.sqrt(')">√</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('4')">4</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('5')">5</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('6')">6</button></div>
+                <div class="col"><button class="btn btn-warning" onclick="appendToResult('*')">×</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('EXP')">EXP</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('1')">1</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('2')">2</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('3')">3</button></div>
+                <div class="col"><button class="btn btn-warning" onclick="appendToResult('-')">-</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('Math.PI')">π</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('<')">&lt;</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('0')">0</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendToResult('.')">.</button></div>
+                <div class="col"><button class="btn btn-primary" onclick="calculateResult()">=</button></div>
+            </div>
+            <!-- Back Button -->
+            <div class="row">
+                <div class="col text-center">
+                    <a href="{% url 'calculator' %}" class="btn btn-secondary">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function appendToResult(value) {
+            const resultElement = document.getElementById('result');
+            if (value === 'CLR') {
+                resultElement.innerHTML = '0'; // Clear the output
+            } else {
+                if (resultElement.innerHTML === '0' || resultElement.innerHTML === 'Error') {
+                    resultElement.innerHTML = ''; // Clear the initial 0 or error
+                }
+                resultElement.innerHTML += value;
+            }
+        }
+
+        function calculateResult() {
+            const expression = document.getElementById('result').innerHTML;
+            try {
+                // Using the math.js library for better mathematical expression parsing
+                const result = math.evaluate(expression.replace(/DEG/g, '* (Math.PI / 180)'));
+                document.getElementById('result').innerHTML = result;
+            } catch (error) {
+                document.getElementById('result').innerHTML = 'Error';
+            }
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"></script> <!-- Added Math.js library -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

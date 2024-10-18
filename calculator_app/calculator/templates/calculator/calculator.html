@@ -1,0 +1,241 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    &lt;!&ndash; Bootstrap CSS &ndash;&gt;
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Styles for the calculator layout */
+        .calculator {
+            max-width: 400px;
+            margin: 50px auto;
+        }
+        .output {
+            height: 75px;
+            font-size: 36px;
+            text-align: right;
+            padding-right: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 10px; /* Rounded corners for the display */
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .btn {
+            flex: 1; /* Make buttons grow equally */
+            height: 75px; /* Fixed height for buttons */
+            font-size: 28px;
+            margin: 5px; /* Small gap between buttons */
+            border-radius: 10px; /* Rounded corners for buttons */
+        }
+        .row {
+            margin: 0;  /* Remove default row margin */
+        }
+        .col {
+            display: flex; /* Use Flexbox to ensure equal size */
+            padding: 0; /* Remove padding from columns */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            &lt;!&ndash; Output Screen &ndash;&gt;
+            <div class="output">
+                <p id="result">0</p>
+            </div>
+
+            &lt;!&ndash; Calculator Buttons &ndash;&gt;
+            <div class="row">
+                <div class="col"><button class="btn btn-secondary">C</button></div>
+                <div class="col"><button class="btn btn-secondary">±</button></div>
+                <div class="col"><button class="btn btn-secondary">%</button></div>
+                <div class="col"><button class="btn btn-warning">÷</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light">7</button></div>
+                <div class="col"><button class="btn btn-light">8</button></div>
+                <div class="col"><button class="btn btn-light">9</button></div>
+                <div class="col"><button class="btn btn-warning">×</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light">4</button></div>
+                <div class="col"><button class="btn btn-light">5</button></div>
+                <div class="col"><button class="btn btn-light">6</button></div>
+                <div class="col"><button class="btn btn-warning">−</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light">1</button></div>
+                <div class="col"><button class="btn btn-light">2</button></div>
+                <div class="col"><button class="btn btn-light">3</button></div>
+                <div class="col"><button class="btn btn-warning">+</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light">0</button></div>
+                <div class="col"><button class="btn btn-light">.</button></div>
+                <div class="col"><button class="btn btn-primary">=</button></div>
+            </div>
+        </div>
+    </div>
+
+    &lt;!&ndash; Bootstrap JS (required for responsive behavior) &ndash;&gt;
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    let result = document.getElementById("result");
+    let currentInput = "";
+    let currentOperation = "";
+
+    document.querySelectorAll(".btn").forEach(button => {
+        button.addEventListener("click", function() {
+            let value = this.textContent;
+
+            if (!isNaN(value) || value === ".") {
+                currentInput += value;
+                result.textContent = currentInput;
+            } else if (value === "C") {
+                currentInput = "";
+                result.textContent = "0";
+            } else if (value === "=") {
+                result.textContent = eval(currentInput);
+                currentInput = result.textContent;
+            } else {
+                currentInput += value === "×" ? "*" : value === "÷" ? "/" : value;
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .calculator {
+            max-width: 400px;
+            margin: 50px auto;
+        }
+        .output {
+            height: 75px;
+            font-size: 36px;
+            text-align: right;
+            padding-right: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .btn {
+            flex: 1;
+            height: 75px;
+            font-size: 28px;
+            margin: 5px;
+            border-radius: 10px;
+        }
+        .row {
+            margin: 0;
+        }
+        .col {
+            display: flex;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="output">
+                <p id="result">0</p>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-secondary" onclick="clearDisplay()">C</button></div>
+                <div class="col"><button class="btn btn-secondary">±</button></div>
+                <div class="col"><button class="btn btn-secondary">%</button></div>
+                <div class="col"><button class="btn btn-warning" onclick="appendOperator('÷')">÷</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light" onclick="appendNumber('7')">7</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendNumber('8')">8</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendNumber('9')">9</button></div>
+                <div class="col"><button class="btn btn-warning" onclick="appendOperator('×')">×</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light" onclick="appendNumber('4')">4</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendNumber('5')">5</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendNumber('6')">6</button></div>
+                <div class="col"><button class="btn btn-warning" onclick="appendOperator('-')">−</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light" onclick="appendNumber('1')">1</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendNumber('2')">2</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendNumber('3')">3</button></div>
+                <div class="col"><button class="btn btn-warning" onclick="appendOperator('+')">+</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-light" onclick="openAdvancedCalculator()">FX</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendNumber('0')">0</button></div>
+                <div class="col"><button class="btn btn-light" onclick="appendNumber('.')">.</button></div>
+                <div class="col"><button class="btn btn-primary" onclick="calculateResult()">=</button></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentInput = "";
+
+        function openAdvancedCalculator() {
+            window.location.href = '/advanced_calculator';  // Navigate to advanced calculator
+        }
+
+        function clearDisplay() {
+            currentInput = ""; // Reset current input
+            document.getElementById('result').innerText = '0'; // Reset display
+        }
+
+        function appendNumber(number) {
+            currentInput += number; // Append number to input
+            document.getElementById('result').innerText = currentInput || '0'; // Update display
+        }
+
+        function appendOperator(operator) {
+            if (currentInput !== "") {
+                currentInput += operator === '×' ? '*' : operator === '÷' ? '/' : operator; // Convert symbols
+                document.getElementById('result').innerText = currentInput; // Update display
+            }
+        }
+
+        function calculateResult() {
+            if (currentInput !== "") {
+                try {
+                    const result = eval(currentInput); // Evaluate expression
+                    document.getElementById('result').innerText = result; // Display result
+                    currentInput = result.toString(); // Reset input for further calculations
+                } catch (error) {
+                    document.getElementById('result').innerText = 'Error'; // Handle errors
+                    currentInput = ""; // Reset input
+                }
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
