@@ -111,6 +111,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Calculator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="manifest" href="/static/manifest.json">
     <style>
         .calculator {
             max-width: 400px;
@@ -201,7 +202,14 @@
             </div>
         </div>
     </div>
-
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/static/calculator/service-worker.js')
+        .then(() => {
+            console.log('Service Worker Registered');
+        });
+    }
+    </script>
     <script>
         function appendToResult(value) {
             const resultElement = document.getElementById('result');

@@ -20,4 +20,6 @@ from django.urls import path, include
 urlpatterns = [
 
     path('', include('calculator.urls')),
+    path('', include('pwa.urls')),
+
 ]

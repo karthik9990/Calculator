@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f034cdd1-ca9d-41ec-9aad-a600b6add36c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Calculator.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/calculator_app/calculator/templates/calculator/advanced_calculator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/calculator_app/calculator/templates/calculator/calculator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/calculator_app/calculator/urls.py" afterDir="false" />
+    <list default="true" id="f034cdd1-ca9d-41ec-9aad-a600b6add36c" name="Changes" comment="code is now working&#10;with advanced_calculator.html&#10;&#10;added back button">
+      <change afterPath="$PROJECT_DIR$/calculator_app/calculator/static/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculator_app/calculator/static/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculator_app/calculator/templates/calculator/advanced_calculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/calculator_app/calculator/templates/calculator/advanced_calculator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculator_app/calculator/templates/calculator/calculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/calculator_app/calculator/templates/calculator/calculator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculator_app/calculator_app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculator_app/calculator_app/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculator_app/calculator_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculator_app/calculator_app/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +29,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "karthik9990"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/karthik9990/Calculator.git",
+    "accountId": "e41b7431-6e67-49b4-8bd7-a460e295331b"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 2
 }]]></component>
   <component name="ProjectId" id="2nahXgx9yXeNzQhDYkGmTIedcS2" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -50,6 +62,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ktadakapalli\Calculator\calculator_app\calculator\static" />
+      <recent name="C:\Users\ktadakapalli\Calculator\calculator_app\calculator\static\calculator" />
       <recent name="C:\Users\ktadakapalli\Calculator\calculator_app\calculator\templates\calculator" />
       <recent name="C:\Users\ktadakapalli\Calculator\calculator_app\calculator\templates" />
     </key>
@@ -70,6 +84,27 @@
       <option name="presentableId" value="Default" />
       <updated>1729217135370</updated>
     </task>
+    <task id="LOCAL-00001" summary="code is now working&#10;with advanced_calculator.html&#10;&#10;added back button">
+      <option name="closed" value="true" />
+      <created>1729230587755</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729230587755</updated>
+    </task>
+    <task id="LOCAL-00002" summary="code is now working&#10;with advanced_calculator.html&#10;&#10;added back button">
+      <option name="closed" value="true" />
+      <created>1729230780184</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729230780184</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="code is now working&#10;with advanced_calculator.html&#10;&#10;added back button" />
+    <option name="LAST_COMMIT_MESSAGE" value="code is now working&#10;with advanced_calculator.html&#10;&#10;added back button" />
   </component>
 </project>
